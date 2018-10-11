@@ -4,13 +4,22 @@ import * as API from '../API/cardActions.js';
 import reducer from '../Redux/Reducer/index.js';
 import store from '../Redux/store.js';
 
+// ----            ---- \\
+// ---- DUMMY DATA ---- \\
+// ----            ---- \\
+
 const stage = 'result'
 const gameStage = {
   type: 'STAGE',
   stage
 }
 
-const score = { type: 'straight', points: 500, hand: 'Straight 10 J Q K A', dateTime: 'Oct 10, 9:35:35 pm' };
+const score = { type:
+  'straight',
+  points: 500,
+  hand: 'Straight 10 J Q K A',
+  dateTime: 'Oct 10, 9:35:35 pm'
+};
 const addScore = {
   type: 'SCORE',
   score
@@ -36,8 +45,12 @@ const toggleCard = {
   card
 }
 
+// ----            ---- \\
+// ----   TESTS    ---- \\
+// ----            ---- \\
+
 describe('Redux store', () => {
-  it('store should always be truthy', () => {
+  it('should always be truthy', () => {
     expect(store).toBeTruthy();
   });
 });
@@ -61,25 +74,25 @@ describe('Redux actions', () => {
 });
 
 describe('Redux reducer', () => {
-  it('reducer should return default', () => {
+  it('returns default', () => {
     expect(reducer({}, { type: 'DEFAULT' })).toEqual({ });
   });
 
-  it('reducer should handle gameStage()', () => {
+  it('handles gameStage()', () => {
     expect(reducer({}, gameStage)).toEqual({ stage });
   });
 
-  it('reducer should handle addScore()', () => {
+  it('handles addScore()', () => {
     let scores = [];
     expect(reducer({}, addScore)).toEqual({ scores: [score, ...scores] });
   });
 
-  it('reducer should handle replaceCards()', () => {
+  it('handles replaceCards()', () => {
     let scores = [];
     expect(reducer({}, replaceCards)).toEqual({ deck, chosen });
   });
 
-  it('reducer should handle toggleCard()', () => {
+  it('handles toggleCard()', () => {
     const state = {};
     state.chosen = chosen;
     const toggled = chosen.map((each) => {

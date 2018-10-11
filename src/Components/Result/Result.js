@@ -12,14 +12,14 @@ export default class Result extends Component {
         <Banner scores={scores}/>
         <span className="h2 bold mt2">Press the button below to start a new game!</span>
         <div className="row justify-around mt2">
-          { chosen.map((each, i) => /* Map through our hand to render each Card component */
+          { chosen.map((each, i) => 
              <Card key={i} each={each} stage={stage}/>
           )}
         </div>
         <button
           className="btn self-center mt4"
           onClick={() => this.props.gameStage('draw')}
-        > /* Start new game */
+        >
           New Game
         </button>
       </div>

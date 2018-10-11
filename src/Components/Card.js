@@ -14,7 +14,6 @@ export default class Card extends Component {
     const { each } = this.props;
     return (
       <div className="flex flex-column items-center justify-end card-container">
-        // If card is not held then render 'Discard' text on top
         { each.held ? null : <span className="bigger1 center">Discard</span> }
         <img
           className="card"

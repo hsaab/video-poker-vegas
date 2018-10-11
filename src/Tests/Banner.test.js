@@ -17,7 +17,7 @@ describe('Banner.js tests', () => {
   it('displays winning message', () => {
     const wrapper = shallow(<Banner scores={straightScore}/>);
     const span = wrapper.find('span');
-    expect(span.text()).toBe(`Congratulations you won ${scores[0].points} points with ${scores[0].hand}`);
+    expect(span.text()).toBe(`Congratulations you won ${straightScore[0].points} points with ${straightScore[0].hand}`);
   });
 
   it('displays try again next time message', () => {
