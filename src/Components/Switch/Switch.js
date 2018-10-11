@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Card from "../Card.js";
 
-export default class Deal extends Component {
+export default class Switch extends Component {
 
   getResult() {
     const { chosen } = this.props;

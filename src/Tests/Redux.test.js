@@ -1,8 +1,8 @@
 import React from 'react';
-import * as actions from '../../Redux/Actions/index.js';
-import * as API from '../../API/cardActions.js';
-import reducer from '../../Redux/Reducer/index.js';
-import store from '../../Redux/store.js';
+import * as actions from '../Redux/Actions/index.js';
+import * as API from '../API/cardActions.js';
+import reducer from '../Redux/Reducer/index.js';
+import store from '../Redux/store.js';
 
 const stage = 'result'
 const gameStage = {
