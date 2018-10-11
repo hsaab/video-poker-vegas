@@ -14,20 +14,20 @@ Video Poker Vegas simulates a game of [video poker](https://en.wikipedia.org/wik
 
 ### Redux Architecture
 
-` State:
-   stage: 'draw' ---> String (controls logic of Game component)
-   deck: ['AS', '4D', ...] ---> Array of 52 Strings (one for each card)
-   chosen: [{
-      card: '6D',
-      held: true },
-      ...] ---> Array of 5 Objects (represents our hand)
-   scores: [{
-      dateTime: 'Oct 11, 8:43:43 am',
-      type: 'straight',
-      hand: 'Straight 10 J Q K A',
-      points: 500
-      },
-      ...] ---> Array of 5 Objects (represents last 5 games)`
+ State:
+   - `stage: 'draw' ---> String (controls logic of Game component)`
+   - `deck: ['AS', '4D', ...] ---> Array of 52 Strings (one for each card)`
+   - `chosen: [{`
+      - `card: '6D',`
+      - `held: true },`
+      `...] ---> Array of 5 Objects (represents our hand)`
+   - `scores: [{`
+      - `dateTime: 'Oct 11, 8:43:43 am',`
+      - `type: 'straight',`
+      - `hand: 'Straight 10 J Q K A',`
+      - `points: 500`
+      `},`
+      `...] ---> Array of 5 Objects (represents last 5 games)``
 
 ### Step 1: Initial Render
 
