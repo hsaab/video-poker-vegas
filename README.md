@@ -20,14 +20,14 @@ Video Poker Vegas simulates a game of [video poker](https://en.wikipedia.org/wik
    - `chosen: [{`
       - `card: '6D',`
       - `held: true },`
-      `...] ---> Array of 5 Objects (represents our hand)`
+      <br/> `...] ---> Array of 5 Objects (represents our hand)`
    - `scores: [{`
       - `dateTime: 'Oct 11, 8:43:43 am',`
       - `type: 'straight',`
       - `hand: 'Straight 10 J Q K A',`
       - `points: 500`
       `},`
-      `...] ---> Array of 5 Objects (represents last 5 games)``
+      `...] ---> Array of 5 Objects (represents last 5 games)`
 
 ### Step 1: Initial Render
 
