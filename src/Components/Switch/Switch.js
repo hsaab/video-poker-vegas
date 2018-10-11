@@ -20,7 +20,7 @@ export default class Switch extends Component {
     const { toggleCard } = this.props; // toggleCard allows the user to toggle between hold / discard
     return (
       <div className="container center mt3 flex flex-column">
-        <span className="h2 bold">Click on card to toggle hold / discard</span>
+        <span className="h2 bold white">Click on card to toggle hold / discard</span>
         <div className="row justify-around mt2">
           { chosen.map((each, i) =>
              <Card key={i} each={each} toggle={toggleCard} stage={stage}/>
@@ -30,7 +30,7 @@ export default class Switch extends Component {
           className="btn self-center mt4"
           onClick={() => this.getResult()}
         >
-          Go
+          GO
         </button>
       </div>
     );

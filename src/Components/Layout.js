@@ -5,7 +5,10 @@ export default class Layout extends Component {
     const { View } = this.props;
     return (
       <div>
-        <span className="h1 bold ml2">Video Poker Vegas</span>
+        <div className="flex row items-center">
+          <img className="poker-icon" src={require("../Assets/video-poker-icon.png")} alt=""/>
+          <span className="h1 bold ml2 white">Video Poker Vegas</span>
+        </div>
         <View {...this.props}/>
       </div>
     );

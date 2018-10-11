@@ -17,14 +17,14 @@ export default class Draw extends Component {
     const { scores } = this.props;
     return (
       <div className="container center mt3 flex flex-column">
-        <span className="h2 bold">Press deal to start a new game</span>
-        <span className="h3 mt3 mb1">Last Five Scores</span>
+        <span className="h2 bold white">Press deal to start a new game</span>
+        <span className="h2 mt3 mb1 special-shadow">Last Five Scores</span>
         <Table scores={scores}/>
         <button
           className="btn self-center mt4"
           onClick={() => this.dealCards()}
         >
-          Deal
+          DEAL
         </button>
       </div>
     );

@@ -10,9 +10,9 @@ export default class Result extends Component {
     return (
       <div className="container center mt3 flex flex-column">
         <Banner scores={scores}/>
-        <span className="h2 bold mt2">Press the button below to start a new game!</span>
+        <span className="h2 bold mt2 white">Press the button below to start a new game!</span>
         <div className="row justify-around mt2">
-          { chosen.map((each, i) => 
+          { chosen.map((each, i) =>
              <Card key={i} each={each} stage={stage}/>
           )}
         </div>
@@ -20,7 +20,7 @@ export default class Result extends Component {
           className="btn self-center mt4"
           onClick={() => this.props.gameStage('draw')}
         >
-          New Game
+          NEW GAME
         </button>
       </div>
     );

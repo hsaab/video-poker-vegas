@@ -11,7 +11,7 @@ export default class Banner extends Component {
     }
     return (
       <div className="container center mt3 flex flex-column">
-        <span className="h1 bold">{message}</span>
+        <span className="h1 bold special-shadow">{message}</span>
       </div>
     );
   }

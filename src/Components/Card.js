@@ -14,7 +14,7 @@ export default class Card extends Component {
     const { each } = this.props;
     return (
       <div className="flex flex-column items-center justify-end card-container">
-        { each.held ? null : <span className="bigger1 center">Discard</span> }
+        { each.held ? null : <span className="bigger1 center special-shadow mb1">DISCARD</span> }
         <img
           className="card"
           onClick={() => this.toggle(each)}

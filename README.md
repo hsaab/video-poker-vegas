@@ -39,10 +39,10 @@ Video Poker Vegas simulates a game of [video poker](https://en.wikipedia.org/wik
       <br/>`...] ---> Array of 5 Objects (represents last 5 games)`
 
   **Actions:**
-    - `gameStage(stage)` changes the stage property
-    - `addScore(score)` adds score to scores property
-    - `replaceCards(deck, chosen)` replaces deck and chosen properties
-    - `toggleCard(card)` searches for card arg within chosen array and toggles held property to true / false
+    * `gameStage(stage)` changes the stage property
+    * `addScore(score)` adds score to scores property
+    * `replaceCards(deck, chosen)` replaces deck and chosen properties
+    * `toggleCard(card)` searches for card arg within chosen array and toggles held property to true / false
 
 ### Step 1: Initial Render
 
@@ -52,7 +52,7 @@ Video Poker Vegas simulates a game of [video poker](https://en.wikipedia.org/wik
 `src/Components/Draw/Draw.js`
 
 * `index.js` renders the `App.js`, passing our Redux store as a prop
-* `App.js` renders `Game.js`, which serves as the main lifecycle component with logic for our website
+* `App.js` renders `Game.js`, which serves as the main, logical lifecycle component
   - `Game.js` passes down important props, such as API functions and Redux state to children components
 * Upon `Game.js` rendering, `componentDidMount()` fires `this.props.gameStage('draw')` (Redux)
 * `Game.js` renders either `Draw.js`, `Switch.js` or `Result.js` depending on what stage we are in
@@ -95,7 +95,7 @@ Video Poker Vegas simulates a game of [video poker](https://en.wikipedia.org/wik
 * The updated chosen cards are re-rendered using `Card.js`
 * `Banner.js` is also rendered which serves to present the User's hand and score
 * If the User would like to play again, he / she can press `New Game` button, which dispatches `gameStage()` (Redux) to change the stage back to `draw`
-* Upon changing stage to `draw`, we see an updated score table with the result of our most recent 5 hands
+* Upon changing stage to `draw`, we see an updated score table with the result of our most recent hand
 
 ## Testing
 

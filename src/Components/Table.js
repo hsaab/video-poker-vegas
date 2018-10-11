@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import ReactTable from "react-table";
 import 'react-table/react-table.css';
 
+const CustomNoDataComponent = () => {
+  return <div className="table-none">No score yet. Play a game!</div>
+}
+
 export default class Table extends Component {
   render() {
     const { scores } = this.props;
@@ -31,6 +35,7 @@ export default class Table extends Component {
 
     return (
       <ReactTable
+        NoDataComponent={CustomNoDataComponent}
         data={scores}
         columns={columns}
         {...props}

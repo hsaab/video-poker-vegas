@@ -1,8 +1,37 @@
 /* Custom */
 
 body {
-  font-family: "Palatino";
-  color: black;
+  font-family: 'Crete Round', serif;
+  color: #ed0003;
+  background-color: #0738B1;
+}
+
+.ReactTable {
+	background-color: #14294F;
+  color: #E2C733;
+  font-weight: bold;
+}
+
+.table-none {
+  background-color: #14294F;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all .3s ease;
+  z-index: 1;
+  pointer-events: none;
+  padding: 20px;
+}
+
+.special-shadow {
+  text-shadow: -1.25px 0 #E2C733, 0 1.25px #E2C733, 1.25px 0 #E2C733, 0 -1.25px #E2C733;
+}
+
+.poker-icon {
+  width: 5vw;
+  height: auto;
 }
 
 button,
@@ -12,18 +41,19 @@ button,
 
 .btn {
   overflow: hidden;
+  font-family: 'Crete Round', serif;
   text-align: center;
   line-height: 1.3;
-  background: transparent;
-  border: 1.5px solid black;
-  color: black;
-  border-radius: 0.5*15vw;
+  background-color: #E2C733;
+  border: 3px solid black;
+  border-style: groove outset;
+  color: #ed0003;
+  border-radius: 50%;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.25em;
-  width: 25vw;
-  height: 8vh;
-  background: white;
+  font-size: 1.5em;
+  width: 30%;
+  height: 12vh;
   display: inline-block;
   transition: all 0.2s;
   -webkit-transition: all 0.2s; }
