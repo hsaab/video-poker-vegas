@@ -58,6 +58,8 @@ Video Poker Vegas simulates a game of [video poker](https://en.wikipedia.org/wik
 * `Game.js` renders either `Draw.js`, `Switch.js` or `Result.js` depending on what stage we are in
 * Because we start in the `draw` stage, we pass the `Draw` component to Layout which renders `Draw.js`
 
+<img width=600 src="src/Assets/Screenshots/Step1.png"/>
+
 ### Step 2: Draw
 
 `src/Components/Draw/Draw.js`
@@ -69,6 +71,8 @@ Video Poker Vegas simulates a game of [video poker](https://en.wikipedia.org/wik
   - calls `createShuffledDeck()` and `dealFiveCards()` (API) to create a deck and chose 5 cards
   - dispatches `replaceCards()` (Redux) to add deck and chosen
   - dispatches `gameStage()` (Redux) to change the stage to `switch`
+
+<img width=600 src="src/Assets/Screenshots/Step2.png"/>
 
 ### Step 3: Switch
 
@@ -85,6 +89,8 @@ Video Poker Vegas simulates a game of [video poker](https://en.wikipedia.org/wik
   - dispatches `addScore()` (Redux) to add score object to Redux
   - dispatches `gameStage()` (Redux) to change the stage to `result`
 
+<img width=600 src="src/Assets/Screenshots/Step3.png"/>
+
 ### Step 4: Result
 
 `src/Components/Result/Result.js`
@@ -96,6 +102,8 @@ Video Poker Vegas simulates a game of [video poker](https://en.wikipedia.org/wik
 * `Banner.js` is also rendered which serves to present the User's hand and score
 * If the User would like to play again, he / she can press `New Game` button, which dispatches `gameStage()` (Redux) to change the stage back to `draw`
 * Upon changing stage to `draw`, we see an updated score table with the result of our most recent hand
+
+<img width=600 src="src/Assets/Screenshots/Step4.png"/>
 
 ## Testing
 
