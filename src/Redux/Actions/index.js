@@ -5,6 +5,13 @@ function gameStage(stage) {
   }
 }
 
+function addScore(score) {
+  return {
+    type: 'SCORE',
+    score
+  }
+}
+
 function replaceCards(deck, chosen) {
   return {
     type: 'REPLACE',
@@ -23,5 +30,6 @@ function toggleCard(card) {
 export {
   gameStage,
   replaceCards,
-  toggleCard
+  toggleCard,
+  addScore
 };

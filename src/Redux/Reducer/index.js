@@ -17,8 +17,18 @@ const game = (state = {}, action) => {
         return each;
       });
       return newState;
+    case 'SCORE':
+      if(newState.scores && newState.scores.length === 5) {
+        newState.scores = newState.scores.slice(0, 4);
+        newState.scores = [action.score, ...newState.scores];
+      } else if(newState.scores && newState.scores.length < 5) {
+        newState.scores = [action.score, ...newState.scores];
+      } else {
+        newState.scores = [action.score];
+      }
+      return newState;
     default:
-      return state
+      return state;
   }
 }
 

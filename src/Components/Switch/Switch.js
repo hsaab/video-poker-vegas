@@ -8,6 +8,7 @@ export default class Deal extends Component {
     const { deck } = this.props;
     const newCards = this.props.calculateResult(deck, chosen);
     this.props.replaceCards(newCards.deck, newCards.chosen);
+    this.props.addScore(newCards.score);
     this.props.gameStage('result');
   }
 
@@ -18,7 +19,7 @@ export default class Deal extends Component {
     return (
       <div className="container center mt3 flex flex-column">
         <span className="h2 bold">Click on card to toggle hold / discard</span>
-        <div className="row justify-around mt4">
+        <div className="row justify-around mt2">
           { chosen.map((each, i) =>
              <Card key={i} each={each} toggle={toggleCard} stage={stage}/>
           )}

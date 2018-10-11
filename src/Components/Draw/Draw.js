@@ -16,7 +16,7 @@ export default class Draw extends Component {
       <div className="container center mt3 flex flex-column">
         <span className="h2 bold">Press deal to start a new game</span>
         <span className="h3 mt3 mb1">Last Five Scores</span>
-        <Table/>
+        <Table scores={this.props.scores}/>
         <button
           className="btn self-center mt4"
           onClick={() => this.dealCards()}

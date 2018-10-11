@@ -34,7 +34,8 @@ const mapStateToProps = state => {
   return {
     stage: state.stage,
     deck: state.deck,
-    chosen: state.chosen
+    chosen: state.chosen,
+    scores: state.scores
   };
 };
 
@@ -46,8 +47,11 @@ const mapDispatchToProps = dispatch => {
     toggleCard: (card) => {
       dispatch(actions.toggleCard(card));
     },
+    addScore: (score) => {
+      dispatch(actions.addScore(score));
+    },
     replaceCards: (deck, chosen) => {
-      dispatch(actions.replaceCards(deck, chosen))
+      dispatch(actions.replaceCards(deck, chosen));
     }
   };
 };
