@@ -12,13 +12,17 @@ To start, please do the following:
 
 Video Poker Vegas simulates a game of [video poker](https://en.wikipedia.org/wiki/Video_poker), evaluating hands for either a straight (500 points) or a pair (100 points). The website also tracks your last five games using Redux, along with what time you played, your hand, as well as how many points you won.
 
-### API ##### `./src/API`
+### API
+
+`./src/API`
 
 - `createShuffledDeck()` returns a shuffled, 52 card deck as an array
 - `dealFiveCards(deck)` returns 5 'chosen' cards from top of deck as an array of objects
 - `calculateResult(deck, chosen)` switches discarded with cards at top of deck and returns an object which includes the new deck, new chosen and score object
 
-### Redux ##### `./src/Redux`
+### Redux
+
+`./src/Redux`
 
  **State:**
    - `stage: 'draw' ---> String (controls logic of Game component)`
