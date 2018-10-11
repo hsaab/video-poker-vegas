@@ -6,6 +6,7 @@ const moment = require('moment');
 // ----                ---- \\
 
 function createShuffledDeck() {
+  // Map through each suite and create each unique type of card, then shuffle deck
   const types = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
   const suites = ['C','S','H','D'];
   const unflattenedDeck = suites.map((eachSuite) => {
@@ -20,6 +21,7 @@ function createShuffledDeck() {
 }
 
 function dealFiveCards(deck) {
+  // Take deck as an arg and return top five cards from deck as chosen cards
   let chosen = [];
   for(let i = 0; i < 5; i++) {
     chosen.push({ card: deck[i], held: true });
@@ -28,6 +30,8 @@ function dealFiveCards(deck) {
 }
 
 function calculateResult(deck, chosen) {
+   // First replace cards user wants to discard, second sort chosen cards, third get score from new hand
+   // Lastly return deck, chosen and score to update our redux state and display in app
    chosen.forEach((each) => {
      if(!each.held) {
        const temp = each.card;
@@ -48,6 +52,7 @@ function calculateResult(deck, chosen) {
 // ----                  ---- \\
 
 function sortCards(chosen) {
+  // Pull lowest card from chosen hand and push into new sortedArray and return sortedArray
   let unSorted = chosen.slice();
   let sorted = [];
   while(unSorted.length > 0) {
@@ -69,6 +74,9 @@ function sortCards(chosen) {
 }
 
 function getScore(chosen) {
+   // First assess hand for highest pair or straight (number of consecutive cards)
+   // Based on type of hand, return score object to update our score table and Redux scores state
+   const dateTime = moment().format("MMM D, h:mm:ss a");
    let pairRank = 0;
    let pairCard = 0;
    let straight = 0;
@@ -83,30 +91,30 @@ function getScore(chosen) {
          pairCard = pairRank > 10 ? chosen[i][0] : parseInt(chosen[i]);
      }
 
-     // Count how many consecutive cards we have
+     // Second check how many consecutive cards we have
      if(secondRank === firstRank + 1) {
        straight++;
      }
    }
 
-   const dateTime = moment().format("MMM D, h:mm:ss a");
-   if(straight === 4) {
+   if(straight === 4) { // Four consecutive cards needed to form a straight
      const hand = `Straight ${chosen.map((each) =>  {
        return cardRank(each) > 10 ? each[0] : parseInt(each);
      }).join(" ")}`;
      return { type: 'straight', hand, points: 500, dateTime };
 
-   } else if(pairRank > 0 && straight < 4) {
+   } else if(pairRank > 0 && straight < 4) { // Only choose pair if straight not available
      const hand = `Pair ${pairCard}`
      return { type: 'pair', hand, points: 100, dateTime };
 
-   } else {
+   } else { // Failed hand if no pair or straight
      const hand = `None`
      return { type: 'none', hand, points: 0, dateTime };
    }
 }
 
 function cardRank(card) {
+  // Translate card abbreviation to number rank i.e. '9D' --> 9 OR 'AS' --> 14
   if(card[0] === 'J') {
     return 11;
   } else if(card[0] === 'Q') {
