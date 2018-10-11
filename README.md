@@ -39,10 +39,10 @@ Video Poker Vegas simulates a game of [video poker](https://en.wikipedia.org/wik
       <br/>`...] ---> Array of 5 Objects (represents last 5 games)`
 
   **Actions:**
-    * `gameStage(stage)` changes the stage property
-    * `addScore(score)` adds score to scores property
-    * `replaceCards(deck, chosen)` replaces deck and chosen properties
-    * `toggleCard(card)` searches for card arg within chosen array and toggles held property to true / false
+    <br/> * `gameStage(stage)` changes the stage property
+    <br/> * `addScore(score)` adds score to scores property
+    <br/> * `replaceCards(deck, chosen)` replaces deck and chosen properties
+   <br/> * `toggleCard(card)` searches for card arg within chosen array and toggles held property to true / false
 
 ### Step 1: Initial Render
 
