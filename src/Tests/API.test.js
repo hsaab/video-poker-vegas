@@ -2,6 +2,10 @@ import React from 'react';
 import * as API from '../API/cardActions.js';
 import _ from 'underscore';
 
+// ----              ---- \\
+// ----  DUMMY DATA  ---- \\
+// ----              ---- \\
+
 const deck = API.createShuffledDeck();
 const chosen = API.dealFiveCards(deck);
 const chosenUser = [
@@ -18,6 +22,9 @@ const straight = ['2H', '3H', '4D', '5H', '6S'];
 const royalStraight = ['10H', 'JD', 'QH', 'KH', 'AC'];
 const fail = ['2H', '10D', '8C', '9H', 'AS'];
 
+// ----            ---- \\
+// ----   TESTS    ---- \\
+// ----            ---- \\
 
 describe('API tests', () => {
   it('createShuffledDeck() creates a deck with 52 cards', () => {
@@ -32,7 +39,7 @@ describe('API tests', () => {
     expect(deckIsUnique).toEqual(true);
   });
 
-  it('dealFiveCards() choses top 5 cards in the deck', () => {
+  it('dealFiveCards() choses top five cards in the deck', () => {
     let checkTopFive = true;
     for(let i = 0; i < chosen.length; i++) {
       if(chosen[i].card !== deck[i]) {
@@ -88,6 +95,7 @@ describe('API tests', () => {
       let discarded = !oldCards[i].held;
       let newCard = newCards[i].card;
       let topOfDeck = deck[dIndex];
+      // If we discarded the old card and replaced it with a new card from the top of deck
       if(discarded && newCard !== topOfDeck) {
         return diffHand = false;
       }

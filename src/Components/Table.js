@@ -3,8 +3,8 @@ import ReactTable from "react-table";
 import 'react-table/react-table.css';
 
 export default class Table extends Component {
-  const { scores } = this.props;
   render() {
+    const { scores } = this.props;
     const columns = [{
       id: 'date',
       Header: 'Date',
