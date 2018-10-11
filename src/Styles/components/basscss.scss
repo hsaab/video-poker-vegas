@@ -498,6 +498,26 @@
 .content-stretch {
   align-content: stretch; }
 
+.row {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
 /* 1. Fix for Chrome 44 bug. https://code.google.com/p/chromium/issues/detail?id=506893 */
 .flex-auto {
   flex: 1 1 auto;
