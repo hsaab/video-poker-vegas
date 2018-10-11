@@ -15,7 +15,7 @@ Video Poker Vegas simulates a game of [video poker](https://en.wikipedia.org/wik
 ### Redux Architecture
 
  State:
-   - `stage: 'draw' ---> String (controls logic of Game component)`
+   - `stage:` 'draw' ---> String (controls logic of Game component)
    - `deck: ['AS', '4D', ...] ---> Array of 52 Strings (one for each card)`
    - `chosen: [{`
       - `card: '6D',`
