@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import ReactTable from "react-table";
-import 'react-table/react-table.css'
+import 'react-table/react-table.css';
 
 export default class Table extends Component {
+  const { scores } = this.props;
   render() {
     const columns = [{
       id: 'date',
@@ -30,7 +31,7 @@ export default class Table extends Component {
 
     return (
       <ReactTable
-        data={this.props.scores}
+        data={scores}
         columns={columns}
         {...props}
       />

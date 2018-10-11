@@ -9,10 +9,14 @@ import * as API from "../API/cardActions.js";
 
 class Game extends Component {
   componentDidMount() {
+    // Ceremonially start game by dispatching redux action to invoke our first stage (draw)
     this.props.gameStage('draw');
   }
 
   render() {
+    // Centralize logic in this container --> pass down API, state and actions to children 
+    // If we are still in first stage, then render Draw component
+    // Otherwise render component that matches the stage of the game
     const { stage } = this.props;
     let View = Draw;
     if(stage === 'switch') View = Switch;

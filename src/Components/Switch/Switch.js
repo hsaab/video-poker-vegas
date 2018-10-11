@@ -4,6 +4,8 @@ import Card from "../Card.js";
 export default class Switch extends Component {
 
   getResult() {
+    // First invoke calculateResult (API) which switches discarded and returns the new deck, hand and score
+    // Then replace cards in Redux state, add our hand score and move game on to the last stage (result)
     const { chosen } = this.props;
     const { deck } = this.props;
     const newCards = this.props.calculateResult(deck, chosen);
@@ -15,7 +17,7 @@ export default class Switch extends Component {
   render() {
     const { chosen } = this.props;
     const { stage } = this.props;
-    const { toggleCard } = this.props;
+    const { toggleCard } = this.props; // toggleCard allows the user to toggle between hold / discard
     return (
       <div className="container center mt3 flex flex-column">
         <span className="h2 bold">Click on card to toggle hold / discard</span>
